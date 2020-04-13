@@ -77,7 +77,7 @@ def remove_redundant_terms(terms, not_cares):
     while i < len(terms):
         case1 = terms[i].source
         case2 = set(terms[i].source).issubset(range(len(set(not_cares))))
-        if not case1 or case2:
+        if case1 and case2:
             terms.pop(i)
             i -= 1
         i += 1
